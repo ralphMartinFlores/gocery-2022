@@ -1,0 +1,105 @@
+.featured__container, .tip__container {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    img {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
+.category {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all .3s;
+    &:hover {
+        border: 2px solid gray;
+    }
+}
+.category__grid, .store__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.category__name {
+    font-size: clamp(16px, 2.5vw, 24px);
+}
+.category__description {
+    display: none;
+}
+.button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #228b22;
+    background-size: 400%;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.button:hover::before {
+    transform: scaleX(1);
+}
+.button-content {
+    position: relative;
+    z-index: 1;
+}
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background-color: #186118;
+    transition: all 0.475s;
+}
+.circular {
+    border-radius: 50%;
+}
+.tip__container {
+    display: none;
+}
+@media only screen and (min-width: 768px) {
+    .category__grid, .store__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    .category {
+        position: relative;
+    }
+    .category__image {
+        max-width: 100px;
+        position: absolute;
+        bottom: -20px;
+        right: -10px;
+    }
+    .category__name {
+        font-weight: 700;
+    }
+    .category__description {
+        display: block;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    .category__grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .store__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .featured__container, .tip__container {
+        max-width: 50%;
+    }
+    .tip__container {
+        display: flex;
+    }
+}

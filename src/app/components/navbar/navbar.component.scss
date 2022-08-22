@@ -1,0 +1,19 @@
+nav {
+    background-color: #1E1E1E;
+    img {
+        max-width: 100px;
+        height: auto;
+    }
+}
+.navbar-dark .navbar-toggler {
+    border-radius: 50%;
+}
+.navbar-toggler {
+    padding: 12px;
+}
+@media screen and (min-width: 769px) {
+    .navbar-expand-sm .navbar-nav .nav-link {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
