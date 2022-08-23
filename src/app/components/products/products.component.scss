@@ -3,9 +3,14 @@
     padding: 2rem;
     border-radius: 8px;
     input {
+        background-color: #121212;
         padding: 12px 20px;
-        border: 1px solid #CED5DB;
         border-radius: 100px;
+        transition: all .3s;
+        border: 2px solid transparent;
+        &:hover, &:focus-visible {
+            border: 2px solid #CED5DB;
+        }
     }
     ::placeholder {
         color: gray;
@@ -21,7 +26,7 @@
     background-color: #1e1e1e;
     border-radius: 8px;
     position: relative;
-    border: 2px solid transparent;
+    border: 2px solid #121212;
     transition: all .3s;
     cursor: pointer;
     img {
@@ -40,42 +45,22 @@
         border: 2px solid gray;
     }
 }
-.button {
+button {
     position: absolute;
     bottom: -20px;
     right: -10px;
-    overflow: hidden;
-    height: 3rem;
-    padding: 8px 16px;
-    border-radius: 100px;
-    background-color: #228b22;
-    background-size: 400%;
-    color: #fff;
-    text-align: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    width: 50px;
+    height: 50px;
+    background-color: forestgreen;
+    border-radius: 50%;
     font-weight: 700;
-}
-.button:hover::before {
-    transform: scaleX(1);
-}
-.button-content {
-    position: relative;
-    z-index: 1;
-}
-.button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    width: 100%;
-    height: inherit;
-    border-radius: inherit;
-    background-color: #186118;
-    transition: all 0.475s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .3s;
+    text-align: center;
+    &:hover {
+        background-color: #186118;
+    }
 }
 @media screen and (min-width: 768px) {
     .products__grid {

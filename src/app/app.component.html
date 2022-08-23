@@ -1,8 +1,16 @@
 <!-- Call Navbar component -->
-<app-navbar *ngIf="_router.url != '/login' && _router.url != '/products'"></app-navbar>
+<app-navbar 
+    *ngIf="_router.url != '/login' 
+    && _router.url != '/products'
+    && _router.url != '/cart'">
+</app-navbar>
 <!-- End of call navbar component -->
 <!-- Home section -->
-<section class="container p-4 ps-md-0 pe-md-0 pt-md-5 pb-md-5 text-white" *ngIf="_router.url != '/login' && _router.url != '/products'">
+<section 
+    class="container p-4 ps-md-0 pe-md-0 pt-md-5 pb-md-5 text-white" 
+    *ngIf="_router.url != '/login' 
+    && _router.url != '/products'
+    && _router.url != '/cart'">
     <div class="d-flex gap-3 align-items-center justify-content-between">
         <div class="home__greetings__container">
             <h1 class="mb-2">Hello, rappyboi</h1>
