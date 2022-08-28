@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<div class="container p-4 ps-md-0 pe-md-0 pt-md-5 pb-md-5 text-white">
+    <div class="d-md-flex justify-content-md-between align-items-md-center gap-3 checkout__greetings__container">
+        <div class="cart__greetings">
+            <h1 class="mb-2">Go-Checkout</h1>
+            <p>Take a look at a summary of your order before you place it for delivery</p>
+        </div>
+        <button class="button mt-4 mt-md-0 mt-lg-0" data-bs-toggle="modal" data-bs-target="#myModal" (click)="checkOut()">
+            <span class="button-content">Place Order</span>
+        </button>
+    </div>
+    <div class="alert alert-info mt-4" role="alert">
+    <h5 class="alert-heading mb-2">Go-Info!</h5>
+        As of now, Go-cery only has Cash on Delivery as its mode of payment, 
+        other modes are expected to be implemented in the future, Stay tuned!
+    </div>
+    <div class="mt-4" *ngFor="let data of dt">
+        <h3>Delivery Information</h3>
+        <div class="information__grid">
+            <div class="information__grid__item p-3 mt-3 d-flex gap-3 align-items-center">
+                <img *ngIf="data.acc_gender == 1" src="../../../assets/images/man.png" alt="">
+                <img *ngIf="data.acc_gender == 2" src="../../../assets/images/woman.png" alt="">
+                <div>
+                    <h5 class="mb-1">Receiver</h5>
+                    <p>{{ data.acc_fname }} {{ data.acc_mname }} {{ data.acc_lname }}</p>
+                </div>
+            </div>
+            <div class="information__grid__item p-3 mt-3 d-flex gap-3 align-items-center">
+                <img src="../../../assets/images/location.png" alt="">
+                <div>
+                    <h5 class="mb-1">Address</h5>
+                    <p>{{ data.acc_no }} {{ data.acc_street }} {{ data.acc_barangay }}, {{ data.acc_city }} {{ data.acc_province }}</p>
+                </div>
+            </div>
+            <div class="information__grid__item p-3 mt-3 d-flex gap-3 align-items-center">
+                <img src="../../../assets/images/smartphone.png" alt="">
+                <div>
+                    <h5 class="mb-1">Contact Number</h5>
+                    <p>{{ data.acc_mobile }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngFor="let seller of seller">
+        <h3 class="mt-4 mb-3">Order Items from {{ seller.store_name }}</h3>
+        <ng-container *ngFor="let item of cart">
+            <div class="row container--dark p-3 mb-2" *ngIf="item.store_id == seller.store_id">
+                <div class="col-6">
+                    <p>{{item.product_name}} x {{item.cart_quantity}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="text-end">{{item.product_price | currency:'PHP' }}</p>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+    <h3 class="mt-3 mb-3">Payment Information</h3>
+    <div class="container--dark p-3">
+        <div class="row">
+            <div class="col-6">
+                <p><b>Subtotal:</b></p>
+            </div>
+            <div class="col-6">
+                <p class="text-end">{{order_info.order_total | currency:'PHP'}}</p>
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-6">
+                <p><b>Delivery Fee:</b></p>
+            </div>
+            <div class="col-6">
+                <p class="text-end">{{order_info.order_shipping | currency:'PHP' }}</p>
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-6">
+                <p><b>Total Price:</b></p>
+            </div>
+            <div class="col-6">
+                <p class="text-end">{{order_info.order_grandtotal | currency:'PHP' }}</p>
+            </div>
+        </div>
+    </div>
+</div>

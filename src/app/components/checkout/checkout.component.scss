@@ -1,0 +1,54 @@
+.modal-header {
+    display: block;
+}
+.modal-content {
+    background-color: #1e1e1e;
+    color: #FFF;
+}
+.checkout__greetings__container {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 8px;
+}
+.information__grid__item, .container--dark {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+}
+.information__grid__item {
+    img {
+        max-width: 60px;
+    }
+}
+button {
+    padding: 10px 32px;
+    width: 100%;
+    background-color: forestgreen;
+    border-radius: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .3s;
+    text-align: center;
+    &:hover {
+        background-color: #186118;
+    }
+}
+.button--danger {
+    border: 2px solid crimson;
+    color: crimson;
+    background-color: transparent;
+    &:hover {
+        background-color: crimson;
+        color: #FFF;
+    }
+}
+@media screen and (min-width: 768px) {
+    .information__grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    button {
+        width: fit-content;
+    }
+}

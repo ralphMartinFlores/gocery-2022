@@ -14,12 +14,14 @@
 }
 button {
     padding: 10px 32px;
+    width: 100%;
     background-color: forestgreen;
     border-radius: 8px;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: all .3s;
+    text-align: center;
     &:hover {
         background-color: #186118;
     }
@@ -48,9 +50,32 @@ img {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+.modal-header {
+    display: block;
+}
+.modal-content {
+    background-color: #1e1e1e;
+    color: #FFF;
+}
+.emptycart__container {
+    img {
+        max-width: 75%;
+    }
+    h5, p {
+        opacity: 0.5;
+    }
+}
 @media screen and (min-width: 768px) {
     .cart__grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    button {
+        width: fit-content;
+    }
+    .emptycart__container {
+        img {
+            max-width: 50%;
+        }
     }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -61,5 +86,10 @@ img {
 @media screen and (min-width: 1025px) {
     .cart__grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .emptycart__container {
+        img {
+            max-width: 25%;
+        }
     }
 }

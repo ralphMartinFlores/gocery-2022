@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div class="container p-4 ps-md-0 pe-md-0 pt-md-5 pb-md-5 text-white">
+  <div class="order__illustration__container">
+    <div class="p-3 p-lg-5">
+        <h1 class="mb-2">Order #{{ order_info.order_id }}</h1>
+        <p><b>Date Ordered:</b> {{ dt[0].created_at | date:"MMMM d, y 'at' h:mm a" }}</p>
+    </div>
+    <div class="order__illustration p-lg-3">
+        <img src="../../../assets/images/cardboard.png" alt="">
+    </div>
+  </div>
+  <div class="orderinfo__grid">
+    <div class="orderinfo__tile d-flex gap-3 align-items-center p-3 mt-3">
+      <img src="../../../assets/images/location.png" alt="">
+      <div>
+        <h5>Delivery Address</h5>
+        <p class="mt-1" *ngFor="let details of order_details">{{ details.acc_no }} {{ details.acc_street }} {{ details.acc_barangay }}, {{ details.acc_city }} {{ details.acc_province }}</p>
+      </div>
+    </div>
+    <div class="orderinfo__tile d-flex gap-3 align-items-center p-3 mt-3">
+      <img src="../../../assets/images/cash-on-delivery.png" alt="">
+      <div>
+        <h5>Payment Method</h5>
+        <p class="mt-1">Cash on Delivery</p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-3 p-3 orderinfo__tile">
+    <h5>Order Items</h5>
+    <div class="row" *ngFor="let item of order_item">
+      <div class="col-6 mt-1">{{ item.product_name }}</div>
+      <div class="col-6 text-end">{{ item.product_price | currency: 'PHP'}} x {{ item.item_quantity }}</div>
+    </div>
+  </div>
+  <div class="mt-3 p-3 orderinfo__tile">
+    <h5>Payment</h5>
+    <div class="row">
+      <div class="col-6">
+        <p class="mt-1">Subtotal</p>
+      </div>
+      <div class="col-6">
+        <p class="text-end">{{ dt[0].order_total | currency: 'PHP' }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <p class="mt-1">Delivery Fee</p>
+      </div>
+      <div class="col-6">
+        <p class="text-end">{{ dt[0].order_shipping | currency: 'PHP' }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <p class="mt-1">Total Price</p>
+      </div>
+      <div class="col-6">
+        <p class="text-end">{{ dt[0].order_grandtotal | currency: 'PHP' }}</p>
+      </div>
+    </div>
+  </div>
+</div>

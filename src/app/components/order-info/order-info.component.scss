@@ -1,0 +1,31 @@
+.order__illustration__container {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    img {
+        display: none;
+    }
+}
+.orderinfo__tile {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    img {
+        max-width: 60px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .orderinfo__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .order__illustration__container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

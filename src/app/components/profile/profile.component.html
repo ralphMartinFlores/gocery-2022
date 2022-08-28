@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="container p-4 ps-md-0 pe-md-0 pt-md-5 pb-md-5 text-white">
+    <div class="d-md-flex justify-content-md-between align-items-md-center gap-3 profile__greetings__container">
+        <div class="cart__greetings">
+            <h1 class="mb-2">Your Go-Profile</h1>
+            <p>Take a look at your profile information, make changes to them by clicking on the button on the right.</p>
+        </div>
+        <button class="button mt-4 mt-md-0 mt-lg-0" routerLink="/edit-profile">
+            <span class="button-content">Edit Profile</span>
+        </button>
+    </div>
+    <ng-container *ngFor="let data of dt">
+        <h3 class="mt-4">{{ data.acc_fname }} <span *ngIf="data.acc_mname == ''"></span> <span *ngIf="data.acc_mname != ''">{{ data.acc_mname[0] }}.</span> {{ data.acc_lname}}</h3>
+        <div class="profileinfo__grid mt-4">
+            <div class="profileinfo__tile d-flex gap-3 align-items-center p-3 mt-md-0">
+                <img src="../../../assets/images/location.png" alt="">
+                <div>
+                  <h5>Delivery Address</h5>
+                  <p class="mt-1">{{ data.acc_no }} {{ data.acc_street }} {{ data.acc_barangay }} {{ data.acc_city }}, {{ data.acc_province }}</p>
+                </div>
+            </div>
+            <div class="profileinfo__tile d-flex gap-3 align-items-center p-3 mt-3 mt-md-0">
+                <img src="../../../assets/images/smartphone.png" alt="">
+                <div>
+                  <h5>Contact Number</h5>
+                  <p class="mt-1">{{ data.acc_mobile }}</p>
+                </div>
+            </div>
+            <div class="profileinfo__tile d-flex gap-3 align-items-center p-3 mt-3 mt-md-0">
+                <img src="../../../assets/images/email.png" alt="">
+                <div>
+                  <h5>Email Address</h5>
+                  <p class="mt-1">{{ data.acc_email }}</p>
+                </div>
+            </div>
+            <div class="profileinfo__tile d-flex gap-3 align-items-center p-3 mt-3 mt-md-0">
+                <img src="../../../assets/images/man.png" alt="">
+                <div>
+                  <h5>Username</h5>
+                  <p class="mt-1">{{ data.acc_username }}</p>
+                </div>
+            </div>
+            <div class="profileinfo__tile d-flex gap-3 align-items-center p-3 mt-3 mt-md-0">
+                <img src="../../../assets/images/gender.png" alt="">
+                <div>
+                  <h5>Gender</h5>
+                  <p class="mt-1" *ngIf="(data.acc_gender == 1)">Male</p>
+                  <p class="mt-1" *ngIf="(data.acc_gender == 2)">Female</p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

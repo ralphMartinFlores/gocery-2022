@@ -1,0 +1,26 @@
+<!-- The Modal -->
+<div class="modal fade" id="editContactModal">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Update Contact</h4>
+          <p class="mt-1">New mobile number? Apply changes to your contact number here.</p>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body" [formGroup]="updateContactForm">
+            <p class="login__form__input__label mb-3">Contact Number</p>
+            <input formControlName="acc_mobile" [(ngModel)]="acc_mobile" type="text" placeholder="09xxxxxxxxx" required>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button class="danger--btn" type="button" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="submitForm()">Save Changes</button>
+        </div>
+  
+      </div>
+    </div>
+</div>

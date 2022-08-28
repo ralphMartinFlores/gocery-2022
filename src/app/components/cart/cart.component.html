@@ -1,98 +1,57 @@
 <app-navbar></app-navbar>
 <div class="container p-4 ps-md-0 pe-md-0 pt-md-5 pb-md-5 text-white">
-    <div class="d-lg-flex justify-content-lg-between align-items-lg-center gap-3 cart__greetings__container">
+    <div class="d-md-flex justify-content-md-between align-items-md-center gap-3 cart__greetings__container">
         <div class="cart__greetings">
             <h1 class="mb-2">Your Go-Cart</h1>
             <p>Products that you add to your cart appear here, take a look at them!</p>
         </div>
-        <button class="button mt-4 mt-lg-0">
+        <button class="button mt-4 mt-md-0 mt-lg-0" (click)="checkOut()">
             <span class="button-content">Checkout</span>
         </button>
     </div>
-    <div class="cart__grid__container mt-4 mt-md-5">
-        <div class="d-flex gap-3 align-items-center mb-4 mb-md-5">
-            <i class="fa-solid fa-store"></i>
-            <h2>SM Supermarket SM City Olongapo</h2>
-        </div>
-        <div class="cart__grid">
-            <div class="cart__item row">
-                <div class="col-8 p-3 d-flex flex-column justify-content-between">
-                    <div>
-                        <h5>Argentina Bacon Liempo 350g</h5>
-                        <p class="mt-2">Quantity: 1</p>
-                    </div>
-                    <div class="cart__quantity__buttons d-flex justify-content-between align-items-center mt-4">
-                        <div class="cart__increment__decrement__button d-flex gap-2">
-                            <button class="button">
-                                <span class="button-content"><i class="fa-solid fa-minus"></i></span>
-                            </button>
-                            <button class="button">
-                                <span class="button-content"><i class="fa-solid fa-plus"></i></span>
-                            </button>
-                        </div>
-                        <div class="cart__remove__button">
-                            <button class="button">
-                                <span class="button-content"><i class="fa-solid fa-trash"></i></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <img class="h-100" src="../../../assets/images/511462_d09fb558-ede2-4fc3-b580-1dbd8b4d02e7_508x508.webp" alt="">
-                </div>
+    <div class="mt-5 text-center emptycart__container" *ngIf = "dt.length === 0">
+        <img src="../../../assets/images/empty-cart.svg" alt="">
+        <h5 class="mt-3 mb-2">Nothing in your cart.</h5>
+        <p>Products you add in your cart will appear here.</p>
+    </div>
+    <div class="cart__grid__container">
+        <ng-container *ngFor="let seller of seller">
+            <div class="d-flex gap-3 align-items-center mt-4 mt-md-5 mb-4 mb-md-5" *ngIf = "dt.length != 0">
+                <i class="fa-solid fa-store"></i>
+                <h2>{{ seller.store_name }}</h2>
             </div>
-            <div class="cart__item row">
-                <div class="col-8 p-3 d-flex flex-column justify-content-between">
-                    <div>
-                        <h5>Argentina Bacon Liempo 350g</h5>
-                        <p class="mt-2">Quantity: 1</p>
-                    </div>
-                    <div class="cart__quantity__buttons d-flex justify-content-between align-items-center mt-4">
-                        <div class="cart__increment__decrement__button d-flex gap-2">
-                            <button class="button">
-                                <span class="button-content"><i class="fa-solid fa-minus"></i></span>
-                            </button>
-                            <button class="button">
-                                <span class="button-content"><i class="fa-solid fa-plus"></i></span>
-                            </button>
+            <div class="cart__grid">
+                <ng-container *ngFor="let cartItem of dt">
+                    <ng-container *ngIf="cartItem.store_id == seller.store_id">
+                        <div class="cart__item row">
+                            <div class="col-8 p-3 d-flex flex-column justify-content-between">
+                                <div>
+                                    <h5>{{ cartItem.product_name }}</h5>
+                                    <p class="mt-2">Quantity: {{ cartItem.cart_quantity }}</p>
+                                </div>
+                                <div class="cart__quantity__buttons d-flex justify-content-between align-items-center mt-4">
+                                    <div class="cart__increment__decrement__button d-flex gap-2">
+                                        <button class="button" (click)="subtractQuantity(cartItem.cart_id, cartItem.cart_quantity)">
+                                            <span class="button-content"><i class="fa-solid fa-minus"></i></span>
+                                        </button>
+                                        <button class="button" (click)="addQuantity(cartItem.cart_id, cartItem.cart_quantity)">
+                                            <span class="button-content"><i class="fa-solid fa-plus"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="cart__remove__button">
+                                        <button class="button" (click)="deleteProduct(cartItem.cart_id)">
+                                            <span class="button-content"><i class="fa-solid fa-trash"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <img class="h-100" src="{{ cartItem.product_image }}" alt="">
+                            </div>
                         </div>
-                        <div class="cart__remove__button">
-                            <button class="button">
-                                <span class="button-content"><i class="fa-solid fa-trash"></i></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <img class="h-100" src="../../../assets/images/511462_d09fb558-ede2-4fc3-b580-1dbd8b4d02e7_508x508.webp" alt="">
-                </div>
+                    </ng-container>
+                </ng-container>
             </div>
-            <div class="cart__item row">
-                <div class="col-8 p-3 d-flex flex-column justify-content-between">
-                    <div>
-                        <h5>Argentina Bacon Liempo 350g</h5>
-                        <p class="mt-2">Quantity: 1</p>
-                    </div>
-                    <div class="cart__quantity__buttons d-flex justify-content-between align-items-center mt-4">
-                        <div class="cart__increment__decrement__button d-flex gap-2">
-                            <button class="button">
-                                <span class="button-content"><i class="fa-solid fa-minus"></i></span>
-                            </button>
-                            <button class="button">
-                                <span class="button-content"><i class="fa-solid fa-plus"></i></span>
-                            </button>
-                        </div>
-                        <div class="cart__remove__button">
-                            <button class="button">
-                                <span class="button-content"><i class="fa-solid fa-trash"></i></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <img class="h-100" src="../../../assets/images/511462_d09fb558-ede2-4fc3-b580-1dbd8b4d02e7_508x508.webp" alt="">
-                </div>
-            </div>
-        </div>
+        </ng-container>
     </div>
 </div>

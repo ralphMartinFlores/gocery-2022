@@ -1,0 +1,21 @@
+<div class="login__grid text-white">
+    <div class="login__image">
+    </div>
+    <div class="login__form__container">
+        <div class="login__form">
+            <h1 class="mb-2">Enter One Time Pin</h1>
+            <p class="login__form__subtitle">We've sent to your email address the verification code you need to complete your registration with us, go check it out</p>
+            <div class="login__form__input mt-3">
+                <div>
+                    <p class="login__form__input__label mb-3">OTP</p>
+                    <input [(ngModel)]="acc_otp" type="text" placeholder="Enter otp code here" required>
+                </div>
+                <button (click)="nextForm()">
+                    <span class="button-content">Finish Registration</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

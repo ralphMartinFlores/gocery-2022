@@ -54,6 +54,20 @@
         p {
             text-align: center;
         }
+        .form-check-input {
+            padding: 10px;
+            &:focus {
+                border: 2px solid #FFF !important;
+                box-shadow: none;
+            }
+        }
+        a {
+            color: #FFF;
+            transition: all .3s;
+        }
+        a:hover {
+            color: #228b22;
+        }
     }
 }
 // End of Mobile Styles
@@ -114,12 +128,6 @@
             &:hover {
                 background-color: #186118;
             }
-        }
-        a {
-            transition: all .3s;
-        }
-        a:hover {
-            color: #228b22;
         }
     }
     input {

@@ -1,0 +1,99 @@
+<div class="login__grid">
+    <div class="login__image">
+        <img src="https://i.ibb.co/jk6RMrs/templogo.png" alt="templogo" border="0">
+    </div>
+    <div class="login__form__container">
+        <div class="login__form">
+            <h1>Sign up with us</h1>
+            <p class="login__form__subtitle">... and enjoy a more convenient shopping experience</p>
+            <div class="alert alert-info mt-3">
+                By registering with us, you also agree to the terms, conditions, and privacy policy of Go-cery
+            </div>
+            <form class="login__form__input" novalidate>
+                <div class="input__grid" [formGroup]="registrationForm">
+                    <div>
+                        <p class="login__form__input__label mb-3">First Name</p>
+                        <input formControlName="acc_fname" [(ngModel)]="acc_fname" type="text" placeholder="Enter your first name here" required>
+                    </div>
+                    <div>
+                        <p class="login__form__input__label mb-3 mt-3 mt-md-0">Middle Name</p>
+                        <input [(ngModel)]="acc_mname" [ngModelOptions]="{standalone: true}" type="text" placeholder="Enter your middle name here" required>
+                    </div>
+                    <div>
+                        <p class="login__form__input__label mb-3 mt-3 mt-md-0">Last Name</p>
+                        <input formControlName="acc_lname" [(ngModel)]="acc_lname" type="text" placeholder="Enter your last name here" required>
+                    </div>
+                    <div>
+                        <p class="login__form__input__label mb-3 mt-3 mt-md-0">Gender</p>
+                        <select formControlName="acc_gender" [(ngModel)]="acc_gender" class="form-select" aria-label="Default select example">
+                            <option selected>Choose Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input__grid" [formGroup]="registrationForm">
+                    <div>
+                        <p class="login__form__input__label mb-3">House Number</p>
+                        <input formControlName="acc_no" [(ngModel)]="acc_no" type="text" placeholder="Enter your house number here" required>
+                    </div>
+                    <div>
+                        <p class="login__form__input__label mb-3 mt-3 mt-md-0">Street</p>
+                        <input formControlName="acc_street" [(ngModel)]="acc_street" type="text" placeholder="Enter your street here" required>
+                    </div>
+                    <div>
+                        <p class="login__form__input__label mb-3 mt-3 mt-md-0">Barangay</p>
+                        <select formControlName="acc_barangay" [(ngModel)]="acc_barangay" class="form-select" aria-label="Default select example">
+                            <option selected>Choose Barangay</option>
+                            <option value="Asinan">Asinan</option>
+                            <option value="Banicain">Banicain</option>
+                            <option value="Barretto">Barretto</option>
+                            <option value="East Bajac-Bajac">East Bajac-Bajac</option>
+                            <option value="East Tapinac">East Tapinac</option>
+                            <option value="Gordon Heights">Gordon Heights</option>
+                            <option value="Kalaklan">Kalaklan</option>
+                            <option value="Mabayuan">Mabayuan</option>
+                            <option value="New CabalanN">New Cabalan</option>
+                            <option value="New Ilalim">New Ilalim</option>
+                            <option value="New Kababae">New Kababae</option>
+                            <option value="Old Cabalan">Old Cabalan</option>
+                            <option value="Pag-asa">Pag-asa</option>
+                            <option value="Santa Rita">Santa Rita</option>
+                            <option value="West Bajac-Bajac">West Bajac-Bajac</option>
+                            <option value="West Tapinac">West Tapinac</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input__grid" [formGroup]="registrationForm">
+                    <div>
+                        <p class="login__form__input__label mb-3">Contact Number</p>
+                        <input formControlName="acc_mobile" [(ngModel)]="acc_mobile" type="text" placeholder="09xxxxxxxxx" required>
+                    </div>
+                    <div>
+                        <p class="login__form__input__label mb-3 mt-3 mt-md-0">Email Address</p>
+                        <input formControlName="acc_email" [(ngModel)]="acc_email" type="text" placeholder="youremail@address.com" required>
+                    </div>
+                </div>
+                <div class="input__grid" [formGroup]="registrationForm">
+                    <div>
+                        <p class="login__form__input__label mb-3">Username</p>
+                        <input formControlName="acc_username" [(ngModel)]="acc_username" type="text" placeholder="Enter desired username here" required>
+                    </div>
+                    <div>
+                        <p class="login__form__input__label mb-3 mt-3 mt-md-0">Password</p>
+                        <input formControlName="acc_password" [(ngModel)]="acc_password" type="password" placeholder="Enter password here" required>
+                    </div>
+                </div>
+                <div class="d-flex flex-column flex-lg-row gap-3 align-items-center mt-3">
+                    <button (click)="register()">
+                        <span class="button-content">Get OTP</span>
+                    </button>
+                    <button class="cancel--btn" routerLink="/">
+                        <span class="button-content">Go back to login</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,30 @@
+<!-- The Modal -->
+<div class="modal fade" id="editNameModal">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Update Name</h4>
+          <p class="mt-1">Have a new last name? Apply changes to your name here.</p>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body" [formGroup]="updateNameForm">
+            <p class="login__form__input__label mb-3">First Name</p>
+            <input formControlName="acc_fname" [(ngModel)]="acc_fname" type="text" placeholder="Enter first name here" required>
+            <p class="login__form__input__label mt-3 mb-3">Middle Name</p>
+            <input formControlName="acc_mname" [(ngModel)]="acc_mname" type="text" placeholder="Enter middle name here">
+            <p class="login__form__input__label mt-3 mb-3">Last Name</p>
+            <input formControlName="acc_lname" [(ngModel)]="acc_lname" type="text" placeholder="Enter last name here" required>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button class="danger--btn" type="button" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="submitForm()">Save Changes</button>
+        </div>
+  
+      </div>
+    </div>
+</div>

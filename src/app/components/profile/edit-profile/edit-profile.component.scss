@@ -1,0 +1,36 @@
+.editprofile__illustration__container {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    img {
+        display: none;
+    }
+}
+.editprofile__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.editprofile__tile {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    border: 2px solid #121212;
+    transition: all .3s;
+    cursor: pointer;
+    &:hover {
+        border: 2px solid gray;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .editprofile__illustration__container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        img {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .editprofile__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

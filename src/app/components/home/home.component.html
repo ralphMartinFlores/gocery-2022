@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<section class="container p-4 ps-md-0 pe-md-0 pt-md-5 pb-md-5 text-white">
+    <div class="d-flex gap-3 align-items-center justify-content-between">
+        <div class="home__greetings__container">
+            <h1 class="mb-2" *ngFor="let data of dt">Hello, {{ data.acc_username }}</h1>
+            <p>What would you like to buy for today?</p>
+        </div>
+        <button class="button circular d-lg-none" routerLink="/cart">
+            <span class="button-content"><i class="fa-solid fa-cart-shopping"></i></span>
+        </button>
+    </div>
+    <div class="d-lg-flex gap-3 mt-4 mt-lg-5">
+        <div class="row featured__container">
+            <div class="col-7 p-3 d-md-flex flex-md-column justify-content-md-between">
+                <div>
+                    <h3>Featured Product</h3>
+                    <p class="mt-2">{{ randomitem.product_name }}</p>
+                    <p class="product__price">₱ {{ randomitem.product_price }}</p>
+                </div>
+                <div>
+                    <button class="button mt-3" (click)="addToCart(randomitem.product_id)">
+                        <span class="button-content">Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-5">
+                <img *ngIf="randomitem.product_image != null" class="h-100" src="{{ randomitem.product_image }}" alt="">
+                <img *ngIf="randomitem.product_image === null" class="h-100 bg-light" src="https://via.placeholder.com/250" alt="">
+            </div>
+        </div>
+        <div class="row tip__container mt-4 mt-lg-0">
+            <div class="col-8 p-3 d-md-flex flex-md-column justify-content-md-between">
+                <div>
+                    <h3>Go-Tip!</h3>
+                    <p class="mt-2">
+                        By tapping or clicking the add to cart icon that appears on a product, you can add that item to your shopping cart, from which you can check out right away or come back later.
+                    </p>
+                </div>
+                <div>
+                    <button class="button mt-3" routerLink="/cart">
+                        <span class="button-content">View Cart</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 p-3">
+                <img class="h-100" src="../assets/images/add-to-cart.png" alt="">
+            </div>
+        </div>
+    </div>
+    <h1 class="mt-4 mb-4 mt-md-5 mb-md-5">Browse by Category</h1>
+    <div class="category__grid">
+        <div class="p-3 category text-center" *ngFor="let category of categories;" (click)="categoryClick(category.name)">
+            <img class="category__image" src="../assets/images/{{ category.icon_name }}.png" alt="{{ category.alt }}">
+            <p class="mt-3 mt-md-0 text-start category__name">{{ category.name }}</p>
+            <p class="mt-1 mb-md-5 text-start category__description">{{ category.description }}</p>
+        </div>
+    </div>
+    <h1 class="mt-4 mb-4 mt-md-5 mb-md-5">Browse by Store</h1>
+    <div class="store__grid">
+        <div class="p-3 category text-center" *ngFor="let store of stores" (click)="storeClick(store.store_id); getStoreName(store.store_name);">
+            <img src="../assets/images/shop.png" alt="Grocery store icon">
+            <p class="mt-3 text-start category__name">{{ store.store_name }}</p>
+        </div>
+    </div>
+</section>
