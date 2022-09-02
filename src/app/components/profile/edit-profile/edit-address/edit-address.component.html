@@ -1,6 +1,6 @@
 <!-- The Modal -->
 <div class="modal fade" id="editAddressModal">
-    <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
   
         <!-- Modal Header -->
@@ -13,17 +13,17 @@
         <div class="modal-body" [formGroup]="updateAddressForm">
             <p class="login__form__input__label mb-3">House Number</p>
             <input formControlName="acc_no" [(ngModel)]="acc_no" type="text" placeholder="Enter house number here" required>
-            <div class="alert alert-danger mt-3" *ngIf="isSubmitted && f.acc_no.errors?.['required']">
+            <p class="login__form__errormsg mt-3" *ngIf="isSubmitted && f.acc_no.errors?.['required']">
               You have to enter your house number.
-            </div>
+            </p>
             <p class="login__form__input__label mt-3 mb-3">Street</p>
             <input formControlName="acc_street" [(ngModel)]="acc_street" type="text" placeholder="Enter street name here">
-            <div class="alert alert-danger mt-3" *ngIf="isSubmitted && f.acc_street.errors?.['required']">
+            <p class="login__form__errormsg mt-3" *ngIf="isSubmitted && f.acc_street.errors?.['required']">
               You have to enter your street name.
-            </div>
+            </p>
             <p class="login__form__input__label mt-3 mb-3">Barangay</p>
-            <select formControlName="acc_barangay" [(ngModel)]="acc_barangay" class="form-select" aria-label="Default select example">
-                <option selected>Choose Barangay</option>
+            <select formControlName="acc_barangay" [(ngModel)]="acc_barangay" class="form-select" required>
+                <option disabled selected value="Barangay">Choose Barangay</option>
                 <option value="Asinan">Asinan</option>
                 <option value="Banicain">Banicain</option>
                 <option value="Barretto">Barretto</option>
@@ -41,9 +41,9 @@
                 <option value="West Bajac-Bajac">West Bajac-Bajac</option>
                 <option value="West Tapinac">West Tapinac</option>
             </select>
-            <div class="alert alert-danger mt-3" *ngIf="isSubmitted && f.acc_barangay.errors?.['required']">
-              You have to select your barangay.
-            </div>
+            <p class="login__form__errormsg mt-3" *ngIf="isSubmitted && f.acc_barangay.errors?.['required']">
+              You have to choose your barangay.
+            </p>
         </div>
   
         <!-- Modal footer -->

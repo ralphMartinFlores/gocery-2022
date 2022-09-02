@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     acc_mobile: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.maxLength(11), Validators.minLength(11)]),
     acc_email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     acc_username: new FormControl('', [Validators.required]),
-    acc_password: new FormControl('', [Validators.required])
+    acc_password: new FormControl('', [Validators.required, Validators.minLength(8)])
   });
 
   constructor(private ds: DataService, private router: Router) { }

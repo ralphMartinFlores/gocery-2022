@@ -1,46 +1,46 @@
 .order__illustration__container {
-    background-color: #1e1e1e;
+    background-color: var(--clr-dynamicblack);
     border-radius: 8px;
     img {
         display: none;
     }
 }
 .order {
-    background-color: #1e1e1e;
+    background-color: var(--clr-dynamicblack);
     border-radius: 8px;
     position: relative;
     cursor: pointer;
     transition: all .3s;
     border: 2px solid transparent;
     &:hover {
-        border: 2px solid gray;
+        border: 2px solid var(--clr-gray);
     }
 }
 .status {
     position: absolute;
     bottom: -20px;
     right: -15px;
-    padding: 4px 16px;
+    padding: 0.25rem 1rem;
     border-radius: 100px;
     width: fit-content;
     font-weight: 700;
     text-transform: uppercase;
 }
 .pending {
-    background-color: #fab451;
-    color: #7c4a03;
+    background-color: hsl(35, 94%, 65%);
+    color: hsl(35, 95%, 25%);
 }
 .for-delivery {
-    background-color: #e4cc58;
-    color: #6d5b09;
+    background-color: hsl(50, 72%, 62%);
+    color: hsl(49, 85%, 23%);
 }
 .delivered {
-    background-color: #64ae64;
-    color: #114611;
+    background-color: hsl(120, 31%, 54%);
+    color: hsl(120, 61%, 17%);
 }
 .cancelled {
-    background-color: #b84d4d;
-    color: #4d0000;
+    background-color: hsl(0, 43%, 51%);
+    color: hsl(0, 100%, 15%);
 }
 .emptyorders__container {
     img {

@@ -24,7 +24,7 @@
                 <ng-container *ngFor="let cartItem of dt">
                     <ng-container *ngIf="cartItem.store_id == seller.store_id">
                         <div class="cart__item row">
-                            <div class="col-8 p-3 d-flex flex-column justify-content-between">
+                            <div class="col-7 p-3 d-flex flex-column justify-content-between">
                                 <div>
                                     <h5>{{ cartItem.product_name }}</h5>
                                     <p class="mt-2">Quantity: {{ cartItem.cart_quantity }}</p>
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-5">
                                 <img class="h-100" src="{{ cartItem.product_image }}" alt="">
                             </div>
                         </div>

@@ -1,19 +1,19 @@
 .products__search__container {
-    background-color: #1e1e1e;
+    background-color: var(--clr-dynamicblack);
     padding: 2rem;
     border-radius: 8px;
     input {
-        background-color: #121212;
-        padding: 12px 20px;
+        background-color: var(--clr-darktoneink);
+        padding: 0.75rem 1.25rem;
         border-radius: 100px;
         transition: all .3s;
         border: 2px solid transparent;
         &:hover, &:focus-visible {
-            border: 2px solid #CED5DB;
+            border: 2px solid var(--clr-satinwhite);
         }
     }
     ::placeholder {
-        color: gray;
+        color: var(--clr-gray);
     }
 }
 .products__grid {
@@ -23,10 +23,10 @@
     grid-row-gap: 2rem;
 }
 .product {
-    background-color: #1e1e1e;
+    background-color: var(--clr-dynamicblack);
     border-radius: 8px;
     position: relative;
-    border: 2px solid #121212;
+    border: 2px solid var(--clr-darktoneink);
     transition: all .3s;
     cursor: pointer;
     img {
@@ -35,14 +35,14 @@
         aspect-ratio: 1 / 1;
     }
     .product__price {
-        padding: 4px 16px;
-        background-color: #121212;
+        padding: 0.25rem 1rem;
+        background-color: var(--clr-darktoneink);
         border-radius: 100px;
         width: fit-content;
         margin-top: 8px;
     }
     &:hover {
-        border: 2px solid gray;
+        border: 2px solid var(--clr-gray);
     }
 }
 button {
@@ -51,7 +51,7 @@ button {
     right: -10px;
     width: 50px;
     height: 50px;
-    background-color: forestgreen;
+    background-color: var(--clr-forestgreen);
     border-radius: 50%;
     font-weight: 700;
     letter-spacing: 1px;
@@ -59,7 +59,7 @@ button {
     transition: all .3s;
     text-align: center;
     &:hover {
-        background-color: #186118;
+        background-color: var(--clr-overgrowntemple);
     }
 }
 .emptyresult__container {
@@ -70,6 +70,17 @@ button {
     img, h5 {
         opacity: 0.5;
     }
+}
+.scroll-top--btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    outline: none;
+    padding: 0;
 }
 @media screen and (min-width: 768px) {
     .products__grid {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-order-info',
@@ -48,9 +49,19 @@ export class OrderInfoComponent implements OnInit {
   cancelOrder() {
     this.orderStatus.order_status = 0;
     this.ds.sendApiRequest("cancelOrder/" + this.dt[0].order_id, this.orderStatus).subscribe((data: { payload: any[]; }) => {
-    console.log("Order cancelled");
+      Swal.fire({
+        title: 'Success!',
+        text: 'Your order was cancelled.',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: 'forestgreen'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.order_item = data.payload;
+          this.router.navigate(['/orders']);
+        }
+      })
     this.order_item = data.payload;
-    this.router.navigate(['/orders']);
     });
   }
 

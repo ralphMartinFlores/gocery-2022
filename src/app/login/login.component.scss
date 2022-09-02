@@ -6,27 +6,14 @@
     display: none;
 }
 .login__form__container {
-    background-image: url("../../assets/images/stacked-waves-haikei.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: grid;
     align-items: center;
     justify-content: center;
     height: 100%;
-    color: #fff;
+    color: var(--clr-whitelight);
     h1 {
-       font-size: 48px;
+       font-size: clamp(3em, 5vw, 4em);
        font-weight: 700; 
-    }
-    .login__form {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        padding: 1rem;
     }
     .login__form__input {
         display: flex;
@@ -34,19 +21,33 @@
         gap: 1rem;
         margin-top: 3rem;
         button {
-            padding: 10px 32px;
-            border: 1px solid #CED5DB;
-            border-radius: 100px;
+            padding: 0.625rem 2rem;
+            border-radius: 6.25rem;
+            background-color: var(--clr-forestgreen);
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: all .3s;
             text-align: center;
+            &:hover {
+                background-color: var(--clr-overgrowntemple);
+            }
         }
         input {
-            padding: 12px 20px;
-            border: 1px solid #CED5DB;
-            border-radius: 100px;
+            padding: 0.75rem 1.25rem;
+            border: 2px solid var(--clr-dynamicblack);
+            background-color: var(--clr-dynamicblack);
+            border-radius: 6.25rem;
+            transition: all .3s;
+            &:hover {
+                border: 2px solid var(--clr-whitelight);
+            }
+            &:focus-visible {
+                border: 2px solid var(--clr-whitelight);
+            }
+        }
+        ::placeholder {
+            color: var(--clr-gray);
         }
         .login__form__input__label {
             text-align: left;
@@ -55,18 +56,22 @@
             text-align: center;
         }
         .form-check-input {
-            padding: 10px;
+            padding: 0.625rem;
             &:focus {
                 border: 2px solid #FFF !important;
                 box-shadow: none;
             }
         }
         a {
-            color: #FFF;
+            color: var(--clr-whitelight);
             transition: all .3s;
         }
         a:hover {
-            color: #228b22;
+            color: var(--clr-forestgreen);
+        }
+        .login__form__errormsg {
+            color: var(--clr-enticingred);
+            font-size: 0.875rem;
         }
     }
 }
@@ -102,13 +107,9 @@
 }
 .login__form__container {
     background-image: none;
-    background-color: #121212;
     color: #FFF;
-    h1 {
-        font-size: 64px;
-    }
     .login__form__subtitle {
-        font-size: 24px;
+        font-size: 1.5em;
     }
     .login__form {
         background: none;
@@ -121,28 +122,9 @@
     }
     .login__form__input {
         button {
-            background: #228b22;
-            border: 0;
             width: 70%;
             margin: 0 auto;
-            &:hover {
-                background-color: #186118;
-            }
         }
-    }
-    input {
-        border: 2px solid #1E1E1E !important;
-        background-color: #1E1E1E;
-        transition: all .3s;
-    }
-    input:hover {
-        border: 2px solid #FFF !important;
-    }
-    input:focus-visible {
-        border: 2px solid #FFF !important;
-    }
-    ::placeholder {
-        color: gray;
     }
 }
 }

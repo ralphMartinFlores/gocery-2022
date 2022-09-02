@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { UserService } from 'src/app/services/user.service';
@@ -85,6 +85,27 @@ export class HomeComponent implements OnInit {
     this.getStores();
     this.featuredProduct();
     this.getCart();
+  }
+
+  isShow: boolean;
+  topPosToStartShowing = 100;
+
+  @HostListener('window:scroll')
+  checkScroll() {
+  const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if (scrollPosition >= this.topPosToStartShowing) {
+      this.isShow = true;
+    } else {
+      this.isShow = false;
+    }
+  }
+
+  gotoTop() {
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
   }
 
   dt: any[] = [];
@@ -192,5 +213,6 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-
 }
+
+

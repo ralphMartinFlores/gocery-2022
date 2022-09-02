@@ -1,15 +1,33 @@
 .order__illustration__container {
-    background-color: #1e1e1e;
+    background-color: var(--clr-dynamicblack);
     border-radius: 8px;
-    img {
-        display: none;
-    }
+    padding: 2rem;
 }
 .orderinfo__tile {
-    background-color: #1e1e1e;
+    background-color: var(--clr-dynamicblack);
     border-radius: 8px;
     img {
         max-width: 60px;
+    }
+}
+button {
+    padding: 0.625rem 2rem;
+    width: 100%;
+    background-color: var(--clr-forestgreen);
+    border-radius: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .3s;
+    text-align: center;
+    &:hover {
+        background-color: var(--clr-overgrowntemple);
+    }
+}
+.cancel-btn {
+    background-color: var(--clr-crimson);
+    &:hover {
+        background-color: var(--clr-khornered);
     }
 }
 @media screen and (min-width: 768px) {
@@ -17,6 +35,9 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+    }
+    button {
+        width: fit-content;
     }
 }
 @media screen and (min-width: 1025px) {

@@ -7,7 +7,7 @@
         </div>
         <div class="products__search">
             <h5 class="text-start mt-4 mb-3 mt-lg-0">Search</h5>
-            <input [formControl]="search" [(ngModel)]="term" class="w-100" type="text" placeholder="{{ randomitem.product_name }} ..." required>
+            <input [formControl]="search" [(ngModel)]="term" class="w-100" type="text" placeholder="{{ randomitem.product_name }} ...">
         </div>
     </div>
     <h2 class="mt-4 mb-4 mt-md-5 mb-md-5">Products</h2>
@@ -29,4 +29,9 @@
             </button>
         </div>
     </div>
+    <ng-container>
+        <button *ngIf="isShow" (click)="gotoTop()" class="scroll-top--btn">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+    </ng-container>
 </div>

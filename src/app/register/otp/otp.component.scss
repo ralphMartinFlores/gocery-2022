@@ -10,21 +10,21 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    color: #fff;
+    color: var(--clr-whitelight);
     h1 {
-       font-size: 48px;
+       font-size: 3em;
        font-weight: 700; 
     }
     .login__form {
-        padding: 24px;
+        padding: 1.5rem;
     }
     .login__form__input {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         button {
-            padding: 10px 32px;
-            background-color: #228b22;
+            padding: 0.625rem 2rem;
+            background-color: var(--clr-forestgreen);
             border-radius: 100px;
             font-weight: 700;
             letter-spacing: 1px;
@@ -33,21 +33,21 @@
             text-align: center;
             width: 100%;
             &:hover {
-                background-color: #186118;
+                background-color: var(--clr-overgrowntemple);
             }
         }
         .cancel--btn {
             background-color: transparent;
-            border: 2px solid crimson;
-            color: #c26666;
+            border: 2px solid var(--clr-crimson);
+            color: var(--clr-stormypassion);
             &:hover {
-                background-color: crimson;
-                color: #FFF;
+                background-color: var(--clr-crimson);
+                color: var(--clr-whitelight);
             }
         }
         input {
-            padding: 12px 20px;
-            background-color: #1E1E1E;
+            padding: 0.75rem 1.25rem;
+            background-color: var(--clr-dynamicblack);
             border-radius: 100px;
             width: 100%;
         }
@@ -58,21 +58,21 @@
             text-align: center;
         }
         ::placeholder {
-            color: gray;
+            color: var(--clr-gray);
         }
     }
 }
 .form-select {
-    padding: 12px 20px;
-    color: #FFF;
-    background-color: #1e1e1e;
+    padding: 0.75rem 1.25rem;
+    color: var(--clr-whitelight);
+    background-color: var(--clr-dynamicblack);
     border: none;
     border-radius: 100px;
     width: 100%;
-    border: 2px solid #1E1E1E !important;
+    border: 2px solid var(--clr-dynamicblack) !important;
     transition: all .3s;
     &:focus {
-        border: 2px solid #FFF !important;
+        border: 2px solid var(--clr-whitelight) !important;
         box-shadow: none;
     }
 }
@@ -90,7 +90,7 @@
     background-size: cover;
     position: relative;
     display: block;
-    background-color: #1E1E1E;
+    background-color: var(--clr-dynamicblack);
     img {
         position: absolute;
         left: 0;
@@ -109,14 +109,14 @@
 }
 .login__form__container {
     background-image: none;
-    background-color: #121212;
-    color: #FFF;
+    background-color: var(--clr-darktoneink);
+    color: var(--clr-whitelight);
     overflow-y: scroll;
     h1 {
-        font-size: 64px;
+        font-size: 4em;
     }
     .login__form__subtitle {
-        font-size: 24px;
+        font-size: 1.5em;
         max-width: 40ch;
     }
     .login__form {
@@ -126,7 +126,7 @@
         backdrop-filter: 0;
         -webkit-backdrop-filter: 0;
         border: 0;
-        padding: 48px 24px 24px 24px;
+        padding: 3rem 1.5rem 1.5rem 1.5rem;
     }
     .login__form__input {
         button {
@@ -137,20 +137,20 @@
             transition: all .3s;
         }
         a:hover {
-            color: #228b22;
+            color: var(--clr-forestgreen);
         }
     }
     input {
         max-width: 50%;
-        border: 2px solid #1E1E1E !important;
-        background-color: #1E1E1E;
+        border: 2px solid var(--clr-dynamicblack) !important;
+        background-color: var(--clr-dynamicblack);
         transition: all .3s;
     }
     input:hover {
-        border: 2px solid #FFF !important;
+        border: 2px solid var(--clr-whitelight) !important;
     }
     input:focus-visible {
-        border: 2px solid #FFF !important;
+        border: 2px solid var(--clr-whitelight) !important;
     }
 }
 .input__grid {
@@ -159,7 +159,7 @@
     gap: 1rem;
     padding-top: 1rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--clr-gray);
 }
 }
 // End of Tablet and Desktop Styles

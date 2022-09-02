@@ -22,23 +22,10 @@ img {
     max-width: 100%;
     height: auto;
 }
-/* removes spacing between cells in tables */
-table {
-    border-collapse: collapse;
-}
 /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
 input, textarea {
     user-select: auto;
     -webkit-user-select: auto;
-}
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-    white-space: revert;
-}
-/* minimum style to allow to style meter element */
-meter {
-    -webkit-appearance: revert;
-    appearance: revert;
 }
 /* reset default text opacity of input placeholder */
 ::placeholder {
@@ -75,25 +62,34 @@ html, body {
     background-color: #121212;
 }
 // End of Reset
-.btn-primary {
-    background-color: #228b22;
-    color: #fff;
-    border-color: #228b22;
-    &:active {
-        color: #fff;
-        background-color: #228b22;
-        border-color: #228b22;
-    }
-    &:focus {
-        box-shadow: 0 0 0 0.25rem rgb(34 139 34 / 50%);
-    }
-    &:hover {
-        color: #fff;
-        background-color: #228b22;
-        border-color: #228b22;
-    }
+// Custom properties 
+:root {
+    --clr-forestgreen: hsl(120, 61%, 34%);
+    --clr-overgrowntemple: hsl(120, 60%, 24%);
+    --clr-boringgreen: hsl(120, 31%, 54%);
+    --clr-whitelight: #FFFFFF;
+    --clr-blackhole: #000000;
+    --clr-darktoneink: hsl(0, 0%, 7%);
+    --clr-dynamicblack: hsl(0, 0%, 12%);
+    --clr-crimson: hsl(0, 100%, 30%);
+    --clr-khornered: hsl(0, 100%, 21%);
+    --clr-stormypassion: hsl(0, 43%, 58%);
+    --clr-enticingred: hsl(0, 43%, 51%);
+    --clr-satinwhite: hsl(208, 15%, 83%);
+    --clr-gray: hsl(0, 0%, 48%);
 }
 .row {
     --bs-gutter-x: 0;
     --bs-gutter-y: 0;
+}
+.scroll-top--btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px !important;
+    outline: none;
+    padding: 0 !important;
 }

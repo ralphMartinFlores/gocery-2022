@@ -9,14 +9,10 @@
             <form class="login__form__input" [formGroup]="loginForm" novalidate>
                 <p class="login__form__input__label">Username</p>
                 <input formControlName="acc_username" [(ngModel)]="acc_username" type="text" placeholder="Enter your username here" required>
-                <div class="alert alert-danger" *ngIf="isSubmitted && f.acc_username.errors?.['required']">
-                    You have to enter your username.
-                </div>
+                <p class="login__form__errormsg text-start mt-2" *ngIf="isSubmitted && f.acc_username.errors?.['required']">You have to enter your username.</p>
                 <p class="login__form__input__label">Password</p>
                 <input formControlName="acc_password" [(ngModel)]="acc_password" [type]="fieldTextType ? 'text' : 'password'" placeholder="Enter your password here" required>
-                <div class="alert alert-danger" *ngIf="isSubmitted && f.acc_password.errors?.['required']">
-                    You have to enter your password.
-                </div>
+                <p class="login__form__errormsg text-start mt-2" *ngIf="isSubmitted && f.acc_password.errors?.['required']">You have to enter your password.</p>
                 <div class="d-flex gap-3 align-items-center">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="toggleFieldTextType()">
                     <label class="form-check-label" for="flexCheckDefault">

@@ -1,30 +1,30 @@
 .modal-content {
-    background-color: #1e1e1e;
-    color: #FFF;
+    background-color: var(--clr-dynamicblack);
+    color: var(--clr-whitelight);
 }
 .modal-header {
     display: block;
 }
 input {
-    padding: 12px 20px;
+    padding: 0.75rem 1.25rem;
     border-radius: 100px;
     width: 100%;
-    border: 2px solid #121212 !important;
-    background-color: #121212;
+    border: 2px solid var(--clr-darktoneink) !important;
+    background-color: var(--clr-darktoneink);
     transition: all .3s;
 }
 input:hover {
-    border: 2px solid #FFF !important;
+    border: 2px solid var(--clr-whitelight) !important;
 }
 input:focus-visible {
-    border: 2px solid #FFF !important;
+    border: 2px solid var(--clr-whitelight) !important;
 }
 ::placeholder {
-    color: gray;
+    color: var(--clr-gray);
 }
 button {
-    padding: 10px 16px;
-    background-color: forestgreen;
+    padding: 0.625rem 1rem;
+    background-color: var(--clr-forestgreen);
     border-radius: 8px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -32,15 +32,19 @@ button {
     transition: all .3s;
     text-align: center;
     &:hover {
-        background-color: #186118;
+        background-color: var(--clr-overgrowntemple);
     }
 }
 .danger--btn {
     background-color: transparent;
-    border: 2px solid crimson;
-    color: #c26666;
+    border: 2px solid var(--clr-crimson);
+    color: var(--clr-stormypassion);
     &:hover {
-        background-color: crimson;
-        color: #FFF;
+        background-color: var(--clr-crimson);
+        color: var(--clr-whitelight);
     }
+}
+.login__form__errormsg {
+    color: var(--clr-enticingred);
+    font-size: 0.75em;
 }

@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { OtpComponent } from './register/otp/otp.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -18,12 +19,12 @@ const routes: Routes = [
   { path: 'otp', component: OtpComponent },
   { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'order-info', component: OrderInfoComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'edit-profile', component: EditProfileComponent },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
+  { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] },
+  { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
+  { path: 'order-info', component: OrderInfoComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'edit-profile', component: EditProfileComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

@@ -1,19 +1,19 @@
 .profile__greetings__container {
-    background-color: #1e1e1e;
+    background-color: var(--clr-dynamicblack);
     padding: 2rem;
     border-radius: 8px;
 }
 .profileinfo__tile {
-    background-color: #1e1e1e;
+    background-color: var(--clr-dynamicblack);
     border-radius: 8px;
     img {
         max-width: 60px;
     }
 }
 button {
-    padding: 10px 32px;
+    padding: 0.625rem 2rem;
     width: 100%;
-    background-color: forestgreen;
+    background-color: var(--clr-forestgreen);
     border-radius: 8px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -21,7 +21,7 @@ button {
     transition: all .3s;
     text-align: center;
     &:hover {
-        background-color: #186118;
+        background-color: var(--clr-overgrowntemple);
     }
 }
 @media screen and (min-width: 768px) {
