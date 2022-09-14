@@ -28,11 +28,12 @@
                 <p *ngIf="order.order_status == 0" class="mt-1 status cancelled">Cancelled</p>
             </div>
             <div class="col-5 text-center">
-                <img class="w-100 h-100 p-3" *ngIf="order.order_status == 1" src="../../../assets/images/pending-approval.png" alt="">
-                <img class="w-100 h-100 p-3" *ngIf="order.order_status == 2" src="../../../assets/images/for-delivery.png" alt="">
-                <img class="w-100 h-100 p-3" *ngIf="order.order_status == 3" src="../../../assets/images/order-approved.png" alt="">
-                <img class="w-100 h-100 p-3" *ngIf="order.order_status == 0" src="../../../assets/images/order-cancelled.png" alt="">
+                <img class="w-100 h-100 p-2" *ngIf="order.order_status == 1" src="../../../assets/images/pending-approval.png" alt="">
+                <img class="w-100 h-100 p-2" *ngIf="order.order_status == 2" src="../../../assets/images/for-delivery.png" alt="">
+                <img class="w-100 h-100 p-2" *ngIf="order.order_status == 3" src="../../../assets/images/order-delivered.png" alt="">
+                <img class="w-100 h-100 p-2" *ngIf="order.order_status == 0" src="../../../assets/images/order-cancelled.png" alt="">
             </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>

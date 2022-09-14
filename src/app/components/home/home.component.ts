@@ -15,61 +15,61 @@ export class HomeComponent implements OnInit {
   categories = [
     {
       name:'Meat', 
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.',
+      description:'Major ingredients are water, protein, and fat. Although it can be eaten raw, it is more commonly consumed after being cooked, seasoned, or processed in a number of ways.',
       icon_name:'meat',
       alt:'Meat category icon'
     },
     {
       name:'Vegetables', 
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.',
+      description:'Typically low in fat and carbohydrates but high in vitamins, minerals, and dietary fiber, can be consumed either raw or cooked and are crucial to human nutrition.',
       icon_name:'vegetable',
       alt:'Vegetable category icon'
     },
     {
       name:'Seafood', 
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.',
+      description:'Prominently includes fish and shellfish, it is an important source of protein in many diets around the world, especially in coastal areas',
       icon_name:'seafood',
       alt:'Seafood category icon'
     },
     {
       name:'Beverages', 
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.',
+      description:'Satisfy your thirsts with water, milk, coffee, juice, smoothies, soft drinks.',
       icon_name:'beverages',
       alt:'Beverages category icon'
     },
     {
       name:'Canned Goods', 
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.',
+      description:'Enjoy your canned food from your favorite brands here, spanish sardines, corned beef, mackerel in natural oil.',
       icon_name:'canned-food',
       alt:'Canned Food category icon'
     },
     {
       name:'Dairy', 
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.',
+      description:'Enjoy milk based products and any of the foods made from milk, including butter, cheese, ice cream, yogurt, and condensed and dried milk.',
       icon_name:'dairy',
       alt:'Dairy category icon'
     },
     {
       name:'Personal Care', 
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.',
+      description:'Products that generally belong to hygienic practices and rinse off immediately after use, such as shampoos, soaps, toothpastes, and shower gels.',
       icon_name:'personal-hygiene',
       alt:'Personal care category icon'
     },
     {
       name:'Cleaners', 
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.',
+      description:'Get your blend of specialty materials used to remove soils and stains from a surface and to restore the surface to its original condition',
       icon_name:'cleaning-products',
       alt:'Cleaning category icon'
     },
     {
       name:'Fruits', 
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.',
+      description:'Order healthy fruits that provide you with lots of nutrients and hydrating feeling.',
       icon_name:'fruits',
       alt:'Fruits category icon'
     },
     {
       name:'Bread',
-      description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, excepturi.', 
+      description:'Get your all time favorite baked products here.', 
       icon_name:'bread',
       alt:'Bread category icon'
     },

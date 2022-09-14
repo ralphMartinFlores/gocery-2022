@@ -22,6 +22,7 @@ import { EditNameComponent } from './components/profile/edit-profile/edit-name/e
 import { EditAddressComponent } from './components/profile/edit-profile/edit-address/edit-address.component';
 import { EditContactComponent } from './components/profile/edit-profile/edit-contact/edit-contact.component';
 import { EditPasswordComponent } from './components/profile/edit-profile/edit-password/edit-password.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { EditPasswordComponent } from './components/profile/edit-profile/edit-pa
     EditNameComponent,
     EditAddressComponent,
     EditContactComponent,
-    EditPasswordComponent
+    EditPasswordComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

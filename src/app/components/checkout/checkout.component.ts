@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-checkout',
@@ -103,8 +104,17 @@ export class CheckoutComponent implements OnInit {
       this.cart = data.payload;
       console.log(this.cart);
       this.clearCart();
-      console.log("Order Placed");
-      this.router.navigate(['/cart']);
+      Swal.fire({
+        title: 'Order Placed!',
+        text: 'Your order has now been received. Please check the status of your order at the your orders page.',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#228B22'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate(['/cart']);
+        }
+      })
     });
   }
 

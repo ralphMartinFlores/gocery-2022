@@ -38,4 +38,9 @@ button {
     .profileinfo__grid {
         grid-template-columns: repeat(3, 1fr);
     }
+    app-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 }
